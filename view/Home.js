@@ -40,7 +40,8 @@ export default function Home(props){
         tcc:{
             color: '#D3D3D3',
             position: 'absolute',
-            bottom: '0'
+            bottom: '0', 
+            textAlign: 'center',
         },
         label:{
            fontSize: 25, 
@@ -65,9 +66,8 @@ export default function Home(props){
     return(
         <View style={estilo.container} >
             <View style={estilo.content}>
-               
                     <View 
-                        title='Criar QRCode'
+                        title='Criar QRCode 2'
                         onPress={()=>props.navigation.navigate('createQRCode')} 
                         style={estilo.btn}
                     >
@@ -78,7 +78,19 @@ export default function Home(props){
                         style={estilo.btn}
                     >
                         <Text style={estilo.textoBtn}>Cadastrar dispositivo</Text>
-                    </View>
+                    </View> 
+
+
+                    <Button 
+                        //title='         Criar QRCode           '
+                        title='Criar QRCode'
+                        onPress={()=>props.navigation.navigate('createQRCode')} />
+                    <Text> </Text>
+                    <Button style={estilo.btn}
+                        title=' Cadastrar Dispositivo '
+                        onPress={()=>props.navigation.navigate('createDisp')} />
+
+
                      <Text style={estilo.tcc}> Projeto de Trabalho de Conclusão de Curso do aluno Eduardo Hahn 
                     de Engenharia de Computação </Text>
             </View>

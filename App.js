@@ -17,12 +17,18 @@ export default function App(props) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {<Stack.Screen name="Home" component={Home} />}
+        {<Stack.Screen name="Home" options={
+          {title:"Página Inicial"}
+        }  component={Home} />}
         <Stack.Screen name="createQRCode" options={
-          {title:"jhenny lkinda"}
+          {title:"Criar Qr Code"}
         } component={createQRCode} />
-        <Stack.Screen name="showQRCode" component={showQRCode} />
-        <Stack.Screen name="createDisp" component={createDisp} />
+        <Stack.Screen name="showQRCode" options={
+          {title:"Apresentar Qr Code"}
+        }  component={showQRCode} />
+        <Stack.Screen name="createDisp" options={
+          {title:"Cadastrar Dispositivo"}
+        } component={createDisp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

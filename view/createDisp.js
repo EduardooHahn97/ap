@@ -35,20 +35,8 @@ export default function createQRCode(props){
 
     return(
         <View style={estilo.container}>
-            <Text style={estilo.label}> Projeto de Trabalho de Conclusão de Curso do aluno Eduardo Hahn 
-                de Engenharia de Computação </Text>
-            <Text style={estilo.label}> Informe o Texto:</Text>
-            <TextInput  
-             style={estilo.txt}
-            autoFocus={false} 
-            multiline={true}
-            value={texto} 
-            onChangeText={text=>setTexto(text)}/>
-
-            <Button 
-                title='Gerar QRCode'
-                onPress={()=>props.navigation.navigate('showQRCode', {texto:texto})}
-            />
+        
+            <Text>TESTE Cadastrar Dispositivo</Text>
         </View>
     )
 }
