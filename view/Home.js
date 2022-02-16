@@ -89,6 +89,10 @@ export default function Home(props){
                     <Button style={estilo.btn}
                         title=' Cadastrar Dispositivo '
                         onPress={()=>props.navigation.navigate('createDisp')} />
+                    <Text> </Text>
+                    <Button style={estilo.btn}
+                        title='Falar QR Code '
+                        onPress={()=>props.navigation.navigate('decrypt')} />
 
 
                      <Text style={estilo.tcc}> Projeto de Trabalho de Conclusão de Curso do aluno Eduardo Hahn 
