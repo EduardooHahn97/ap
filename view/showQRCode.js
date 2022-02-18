@@ -1,20 +1,21 @@
 import React, {useState, useRef} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native'
 import QRCode from 'react-native-qrcode-svg';
+import estilo from './style/style'
 //import RNQRGenerator from 'rn-qr-generator';
 
 export default function showQRCode(props){
-    let myQRCode = useRef();
+    //let myQRCode = useRef();
     
 
     const downloadQRCode = () => {
       console.log('TESTE Eduardo');
-      console.log(myQRCode.current);
-      const qrCodeURL = document.getElementById('qrCodeEl');
+      //console.log(myQRCode.current);
+      //const qrCodeURL = document.getElementById('qrCodeEl');
         //.toDataURL("image/png")
        // .replace("image/png", "image/octet-stream");
       
-      console.log(qrCodeURL);
+      //console.log(qrCodeURL);
       //let aEl = document.createElement("a");
       //aEl.href = qrCodeURL;
       //aEl.download = "QR_Code.png";
@@ -24,12 +25,12 @@ export default function showQRCode(props){
     }
 
     return(
-        <View>
+        <View style={styles.containerQr}>
             <Text> QRCode Gerado: {props.route.params.texto}</Text>
-            <View style={styles.containerQr}>
+            <View style={styles.qr}>
                 <QRCode 
                     value={props.route.params.texto ? props.route.params.texto : 'NA'} 
-                    size={700} 
+                    size={300} 
                     color="black" 
                     backgroundColor="white" 
                     logoSize={30} 
@@ -38,14 +39,20 @@ export default function showQRCode(props){
                     logoBackgroundColor="yellow"
                     nativeID="qrCodeEl"
                     id = "qrCodeEl"
-                    ref={myQRCode}
+                    //ref={myQRCode}
                 /> 
             </View>
 
-            <Button 
-                title='Baixar PDF'
+            <TouchableOpacity style={estilo.btn}
                 onPress={()=>downloadQRCode()}
-            />            
+            >     
+
+            <Text style={estilo.textoBtn}>Baixar PDF</Text>
+            
+            </TouchableOpacity>    
+
+            <Text style={estilo.tcc}> Projeto de Trabalho de Conclusão de Curso do aluno Eduardo Hahn 
+                de Engenharia de Computação </Text>   
         </View>
     )
 }
@@ -55,22 +62,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: '30px',
     },
-    buttonStyle: {
-        backgroundColor: '#51D8C7',
-        borderWidth: 0,
-        color: '#FFFFFF',
-        borderColor: '#51D8C7',
-        alignItems: 'center',
-        borderRadius: 5,
-        marginTop: 30,
-        padding: 10,
-      },
-    buttonTextStyle: {
-        color: '#FFFFFF',
-        paddingVertical: 10,
-        fontSize: 16,
-      },
+    qr:{
+        marginBottom:50,
+        marginTop:50
+    }
   });
 
