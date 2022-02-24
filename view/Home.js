@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
-import estilo from './style/style'
+import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import estilo from './style/style';
+//import Mylogo from '../img/logo.png';
 
 export default function Home(props){
  const estiloHome = StyleSheet.create({
@@ -18,10 +19,25 @@ export default function Home(props){
         justifyContent: 'center',
         width: '100%',
     },
+    stretch: {
+        marginBottom: 50,
+        width: 250,
+        height: 250,
+        resizeMode: 'stretch',
+      },
  });
+
     return(
         <View style={estiloHome.container} >
             <View style={estiloHome.content}>
+                <Image 
+                    style={estiloHome.stretch} 
+                    source={
+                        require("../img/logo.png")
+                        //uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    }/>
+                
+
                 <TouchableOpacity  style={estilo.btn}
                     onPress={()=>props.navigation.navigate('createQRCode')} >
                         <Text style={estilo.textoBtn}> Criar QRCode</Text>
@@ -32,7 +48,7 @@ export default function Home(props){
                         <Text style={estilo.textoBtn}>Cadastrar Dispositivo  </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={estilo.btn}
-                    onPress={()=>props.navigation.navigate('decrypt')} >
+                    onPress={()=>props.navigation.navigate('waitIns')} >
 
                     <Text style={estilo.textoBtn}> Falar QR Code </Text>
                 </TouchableOpacity>

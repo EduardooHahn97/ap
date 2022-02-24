@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import estilo from './style/style'
+import estilo from './style/style';
+import qr from 'qrcode';
 
 export default function createQRCode(props){
     const [texto, setTexto] = useState('')
+    const [resposta, setResposta] = useState('')
+    //let rsp = null;
 
     const estiloCreate = StyleSheet.create({
         container: {
@@ -24,8 +27,37 @@ export default function createQRCode(props){
             marginBottom: 16,
             paddingTop:'0.5rem',
             marginTop:16
+        }, 
+        containerQr: {
+            //flex: 1,
+            //justifyContent: 'center',
+            //alignItems: 'center',
+        },
+        qr:{
+            marginBottom:50,
+            marginTop:50
         }
     });
+
+    const GenerateQRCode = async () => {
+        const rsp = await qr.toDataURL(texto);
+        setResposta(rsp);
+        console.log(rsp);
+    };
+
+
+    const DownloadQRCode= () =>{
+        let downloadLink = document.createElement("a");
+        downloadLink.href = resposta;
+        downloadLink.width = '300px';
+        downloadLink.height = '300px';
+        downloadLink.download = 'qrcode.png';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    };
+
+
 
     return(
         <View style={estiloCreate.container}>
@@ -38,9 +70,23 @@ export default function createQRCode(props){
                 onChangeText={text=>setTexto(text)}/>
 
             <TouchableOpacity style={estilo.btn}
-                onPress={()=>props.navigation.navigate('showQRCode', {texto:texto})}> 
+                //onPress={()=>props.navigation.navigate('showQRCode', {texto:texto})}
+                onPress={()=>GenerateQRCode()}
+            >
             
             <Text style={estilo.textoBtn}>Gerar QRCode</Text>
+            
+            </TouchableOpacity>
+            
+            {resposta ? <img src={resposta} alt="img" width='150px' />: null}
+
+            <TouchableOpacity style={estilo.btn}
+                //onPress={()=>props.navigation.navigate('showQRCode', {texto:texto})}
+                onPress={()=>DownloadQRCode()}
+            >
+            
+            <Text style={estilo.textoBtn}>Baixar QRCode</Text>
+
             
             </TouchableOpacity>
 
@@ -52,3 +98,9 @@ export default function createQRCode(props){
     )
 }
 
+/*            <View style={estilo.qr}>
+                {resposta ? (<a href={resposta} download> <img src={resposta} alt="img" /></a>): null}
+            </View>
+
+            {resposta ? (<a href={resposta} download><img src={resposta} alt="img"/></a>) : null}
+             */

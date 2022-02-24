@@ -9,7 +9,11 @@ import createQRCode from './view/createQRCode';
 import showQRCode from './view/showQRCode';
 import createDisp from './view/createDisp';
 import saveDevice from './backend/saveDevice';
-import decrypt from './view/decryptQRCode';
+import waitIns from './view/waitInstruction';
+import createPDF from './view/createPDF';
+/* <Stack.Screen name="createPDF" options={
+          {title:"Gerar PDF"}
+        }  component={createPDF} />*/ 
 //import downloadPDF from './view/downloadPDF';
 
 export default function App(props) {
@@ -34,9 +38,12 @@ export default function App(props) {
         <Stack.Screen name="saveDevice" options={
           {title:"Salvar Dispositivo"}
         } component={saveDevice} />
-        <Stack.Screen name="decrypt" options={
-          {title:"Falar QR Code"}
-        } component={decrypt} />
+        <Stack.Screen name="waitIns" options={
+          {title:"Esperar Instrução"}
+        } component={waitIns} />
+        <Stack.Screen name="createPDF" options={
+          {title:"Gerar PDF"}
+        }  component={createPDF} />
       </Stack.Navigator>
     </NavigationContainer>
   );

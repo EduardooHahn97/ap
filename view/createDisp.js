@@ -25,9 +25,9 @@ export default function createQRCode(props){
             paddingHorizontal: 16,
             marginTop: 4,
             marginBottom: 16,
-            paddingTop:'0.5rem',
-            marginTop:16, 
-            fontSize:25
+            paddingTop:'0.3rem',
+            marginTop:10, 
+            fontSize:20
         },
     });
 

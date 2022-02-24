@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/cameraroll": "^4.1.2",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "body-parser": "^1.19.1",
@@ -16,6 +17,7 @@
     "expo": "~44.0.2",
     "expo-asset": "~8.4.6",
     "expo-file-system": "~13.1.2",
+    "expo-speech": "~10.1.0",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
     "express": "^4.17.2",
@@ -24,11 +26,12 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-fs": "^2.19.0",
     "react-native-qrcode-svg": "^6.1.2",
     "react-native-web": "0.17.1",
     "sequelize": "^6.16.0",
     "sqlite3": "^5.0.2",
-    "expo-speech": "~10.1.0"
+    "expo-sqlite": "~10.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
