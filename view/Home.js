@@ -27,6 +27,11 @@ export default function Home(props){
       },
  });
 
+ /*<TouchableOpacity style={estilo.btn}
+                    onPress={()=>props.navigation.navigate('createDisp')} >
+                        <Text style={estilo.textoBtn}>Cadastrar Dispositivo  </Text>
+                </TouchableOpacity>*/ 
+
     return(
         <View style={estiloHome.container} >
             <View style={estiloHome.content}>
@@ -36,21 +41,17 @@ export default function Home(props){
                         require("../img/logo.png")
                         //uri: 'https://reactnative.dev/img/tiny_logo.png',
                     }/>
-                
 
                 <TouchableOpacity  style={estilo.btn}
                     onPress={()=>props.navigation.navigate('createQRCode')} >
                         <Text style={estilo.textoBtn}> Criar QRCode</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity style={estilo.btn}
-                    onPress={()=>props.navigation.navigate('createDisp')} >
-                        <Text style={estilo.textoBtn}>Cadastrar Dispositivo  </Text>
-                </TouchableOpacity>
+                
                 <TouchableOpacity style={estilo.btn}
                     onPress={()=>props.navigation.navigate('waitIns')} >
 
-                    <Text style={estilo.textoBtn}> Falar QR Code </Text>
+                    <Text style={estilo.textoBtn}> Aguardar Instrução </Text>
                 </TouchableOpacity>
 
 

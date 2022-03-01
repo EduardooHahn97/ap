@@ -39,7 +39,7 @@ export default function App(props) {
           {title:"Salvar Dispositivo"}
         } component={saveDevice} />
         <Stack.Screen name="waitIns" options={
-          {title:"Esperar Instrução"}
+          {title:"Aguardar Instrução"}
         } component={waitIns} />
         <Stack.Screen name="createPDF" options={
           {title:"Gerar PDF"}
