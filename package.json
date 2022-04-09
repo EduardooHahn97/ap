@@ -43,8 +43,7 @@
   "devDependencies": {
     "expo-cli": "^5.0.3",
     "@babel/core": "^7.12.9",
-    "sequelize-cli": "^6.4.1",
-
+    "sequelize-cli": "^6.4.1"
   },
   "private": true
 }
