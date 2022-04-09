@@ -2,6 +2,9 @@
   "name": "ap",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
@@ -40,7 +43,8 @@
   "devDependencies": {
     "expo-cli": "^5.0.3",
     "@babel/core": "^7.12.9",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+
   },
   "private": true
 }
