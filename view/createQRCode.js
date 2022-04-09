@@ -49,8 +49,8 @@ export default function createQRCode(props){
     const DownloadQRCode= () =>{
         let downloadLink = document.createElement("a");
         downloadLink.href = resposta;
-        downloadLink.width = '300px';
-        downloadLink.height = '300px';
+        downloadLink.width = '900px';
+        downloadLink.height = '900px';
         downloadLink.download = 'qrcode.png';
         document.body.appendChild(downloadLink);
         downloadLink.click();

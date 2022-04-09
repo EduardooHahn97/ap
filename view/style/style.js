@@ -16,7 +16,7 @@ const estilo = StyleSheet.create({
         backgroundColor: 'black', 
         height: '3rem', 
         width: '90%',
-        borderRadius: '18px',
+        borderRadius: 18,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
