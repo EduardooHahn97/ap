@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "16.13.0",
-    "npm": "8.4.1"
+    "node": "16.13.0"//,
+    //"npm": "8.4.1"
   },
   "scripts": {
     "start": "expo start",
